@@ -1,0 +1,13 @@
+%div{id: :modal, class: [:modal]}
+  %div{class: :'modal-header'}
+    %h1{class: :logo}
+      %img{src: image_path('yammer.svg')}
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: {class: :'form-horizontal'} do |f|
+    %div{class: :'modal-body'}
+      %fieldset
+        = f.input :email, autofocus: true
+        = f.input :password
+        - if devise_mapping.rememberable?
+          = f.input :remember_me, as: :boolean, label: false, inline_label: t(:remember_me, scope: :simple_form)
+    %div{class: :'modal-footer'}
+      = f.button :submit, class: [:btn, :'btn-danger']

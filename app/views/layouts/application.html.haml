@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{charset: 'UTF-8'}
+    %title= t(:title)
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+
+  %body{class: [controller_name, action_name]}
+    %div{id: 'container', class: 'container'}
+      = render partial: 'layouts/flash', locals: {flash: flash}
+      %div{id: 'main', role: 'main'}
+        = yield
+
+    = include_gon
+    = javascript_include_tag :application
+    = yield :javascript

@@ -1,0 +1,40 @@
+en:
+  title: 'Recruit'
+
+  simple_form:
+    yes:         'Yes'
+    no:          'No'
+    wait:        'Please wait...'
+    remember_me: 'Remember me'
+
+    required:
+      text: 'Required'
+      mark: '*'
+      html: '<abbr title="Required">*</abbr>'
+
+    labels:
+      admin:
+        email:    'Email'
+        password: 'Password'
+      candidate:
+        name:     'Name'
+        email:    'Email'
+        role:     'Role'
+        comments: 'Comments'
+
+    placeholders:
+      candidate:
+        name:  'John Doe'
+        email: 'jdoe@yammer-inc.com'
+
+  helpers:
+    submit:
+      admin:
+        create: 'Sign in'
+      candidate:
+        create: 'Join us!'
+
+  candidates:
+    create:
+      success: '<b>Thank you!</b> We will get in touch with you soon.'
+      error:   '<b>Aw, snap!</b> Something went wrong...'
