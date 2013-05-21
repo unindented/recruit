@@ -1,4 +1,4 @@
-# Recruit
+# Recruit [![Build Status](https://secure.travis-ci.org/unindented/recruit.png)](http://travis-ci.org/unindented/recruit)
 
 Simple CRUD app for collecting candidate information at job fairs.
 
