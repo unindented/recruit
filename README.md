@@ -51,7 +51,7 @@ heroku config:set SECRET_TOKEN=`bundle exec rake secret`
 Prepare the database:
 
 ```sh
-heroku run bundle exec rake db:setup
+heroku run bundle exec rake db:migrate db:seed
 ```
 
 And you should be ready to go!
