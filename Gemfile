@@ -36,7 +36,7 @@ group :test do
   gem 'database_cleaner',   '~> 1.3.0'
   gem 'shoulda-matchers',   '~> 2.7.0'
   gem 'cucumber-rails',     '~> 1.4.1', require: false
-  gem 'simplecov',          '~> 0.9.0', require: false
+  gem 'coveralls',          '~> 0.7.1', require: false
 
   gem 'poltergeist',        '~> 1.5.1'
   gem 'phantomjs',          '~> 1.9.7', require: 'phantomjs/poltergeist'
