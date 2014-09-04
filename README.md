@@ -1,4 +1,4 @@
-# Recruit [![Build Status](https://secure.travis-ci.org/unindented/recruit.png)](http://travis-ci.org/unindented/recruit) [![Dependency Status](https://gemnasium.com/unindented/recruit.png)](https://gemnasium.com/unindented/recruit) [![Coverage Status](https://coveralls.io/repos/unindented/recruit/badge.png)](https://coveralls.io/r/unindented/recruit)
+# Recruit [![Build Status](https://secure.travis-ci.org/unindented/recruit.png)](http://travis-ci.org/unindented/recruit) [![Dependency Status](https://gemnasium.com/unindented/recruit.png)](https://gemnasium.com/unindented/recruit) [![Coverage Status](https://coveralls.io/repos/unindented/recruit/badge.png)](https://coveralls.io/r/unindented/recruit) [![Quality Status](https://codeclimate.com/github/unindented/recruit.png)](https://codeclimate.com/github/unindented/recruit)
 
 Simple CRUD app for collecting candidate information at job fairs.
 
