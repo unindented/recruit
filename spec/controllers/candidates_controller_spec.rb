@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe CandidatesController do
 
   context 'GET /candidates/new' do
@@ -23,7 +21,7 @@ describe CandidatesController do
       end
 
       it { should respond_with(200) } # OK
-      it { should set_the_flash[:error] }
+      it { should set_the_flash[:alert] }
     end
 
     context 'XHR POST /candidates' do
@@ -48,7 +46,7 @@ describe CandidatesController do
       end
 
       it { should respond_with(302) } # Found
-      it { should set_the_flash[:success] }
+      it { should set_the_flash[:notice] }
     end
 
     context 'XHR POST /candidates' do

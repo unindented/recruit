@@ -16,21 +16,21 @@
   };
 
   Form.prototype.showErrors = function (errors) {
-    var $form = this.$form
-      , model = this.model;
+    var $form = this.$form,
+        model = this.model;
 
     // For each error...
     $.each(errors, function (field, error) {
-      var id = model + '_' + field
-        , $group = $form.find('.' + id)
-        , $field = $form.find('#' + id);
+      var id = model + '_' + field,
+          $group = $form.find('.' + id),
+          $field = $form.find('#' + id);
       // ... mark the group corresponding to that field...
       $group.addClass('error');
       // ... and add an error message.
       $field.after(
         $('<span/>', {
-          'class': 'help-inline'
-        , 'text':  error
+          'class': 'help-block',
+          'text':  error
         })
       );
     });
@@ -39,9 +39,9 @@
   };
 
   Form.prototype.clearErrors = function () {
-    var $form   = this.$form
-      , $groups = $form.find('.control-group.error')
-      , $errors = $groups.find('.help-inline');
+    var $form   = this.$form,
+        $groups = $form.find('.control-group.error'),
+        $errors = $groups.find('.help-block');
 
     // Unmark all groups...
     $groups.removeClass('error');

@@ -14,9 +14,9 @@ class CandidatesController < ApplicationController
     @candidate.role = role
 
     if @candidate.save
-      flash[:success] = t(:success, scope: [:candidates, :create]) 
+      flash[:notice] = t(:success, scope: [:candidates, :create])
     else
-      flash[:error] = t(:error, scope: [:candidates, :create])
+      flash[:alert] = t(:error, scope: [:candidates, :create])
     end
 
     respond_with @candidate, location: root_url

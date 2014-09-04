@@ -11,4 +11,4 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :poltergeist

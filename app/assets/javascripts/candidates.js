@@ -8,9 +8,9 @@
 
   'use strict';
 
-  var graph = new window.Graph('#graph')
-    , logo  = new window.Logo('#modal .logo')
-    , form  = new window.Form('#modal form', 'candidate');
+  var graph = new window.Graph('#graph'),
+      logo  = new window.Logo('#modal .logo'),
+      form  = new window.Form('#modal form', 'candidate');
 
   // Initialize graph.
   graph
@@ -32,7 +32,7 @@
       form.clearErrors();
     })
     // On success...
-    .onSuccess(function (event, candidate, status, xhr) {
+    .onSuccess(function (event, candidate) {
       // ... reset the form...
       form.reset();
       // ... and add the new candidate to the graph.
@@ -41,10 +41,10 @@
         .start();
     })
     // On error...
-    .onError(function (event, xhr, status, error) {
+    .onError(function (event, xhr) {
       // ... parse the list of errors...
-      var response = $.parseJSON(xhr.responseText)
-        , errors   = (response != null) ? response.errors : null;
+      var response = $.parseJSON(xhr.responseText),
+          errors   = (response != null) ? response.errors : null;
       // ... and display them.
       if (errors != null) {
         form.showErrors(errors);

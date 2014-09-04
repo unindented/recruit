@@ -23,8 +23,8 @@
     $.each(messages, function (type, message) {
       $messages.append(
         $('<div />', {
-          'class': 'alert alert-' + type
-        , 'html':  message
+          'class': 'alert alert-' + type,
+          'html':  message
         })
         .hide()
         .fadeIn('fast')

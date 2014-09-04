@@ -4,15 +4,17 @@
 %div{id: :graph}
 
 %div{id: :modal, class: [:modal]}
-  %div{class: :'modal-header'}
-    %h1{class: :logo}
-      %img{src: image_path('yammer.svg')}
-  = simple_form_for(@candidate, remote: true, :html => {data: {type: :json}, class: :'form-horizontal' }) do |f|
-    %div{class: :'modal-body'}
-      %fieldset
-        = f.input :name, autofocus: true
-        = f.input :email
-        = f.association :role, collection: @roles
-        = f.input :comments, input_html: {rows: 3}
-    %div{class: :'modal-footer'}
-      = f.button :submit, class: [:btn, :'btn-primary'], disable_with: t(:wait, scope: :simple_form)
+  %div{class: :'modal-dialog'}
+    %div{class: :'modal-content'}
+      %div{class: :'modal-header'}
+        %h1{class: :logo}
+          %img{src: image_path('yammer.svg')}
+      = simple_form_for(@candidate, remote: true, :html => {data: {type: :json}, class: :'form-horizontal' }, wrapper: :horizontal_form, wrapper_mappings: {check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean}) do |f|
+        %div{class: :'modal-body'}
+          %fieldset
+            = f.input :name, autofocus: true
+            = f.input :email
+            = f.association :role, collection: @roles
+            = f.input :comments, input_html: {rows: 3}
+        %div{class: :'modal-footer'}
+          = f.button :submit, class: [:btn, :'btn-primary'], disable_with: t(:wait, scope: :simple_form)

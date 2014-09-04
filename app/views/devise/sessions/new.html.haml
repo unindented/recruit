@@ -1,13 +1,15 @@
 %div{id: :modal, class: [:modal]}
-  %div{class: :'modal-header'}
-    %h1{class: :logo}
-      %img{src: image_path('yammer.svg')}
-  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: {class: :'form-horizontal'} do |f|
-    %div{class: :'modal-body'}
-      %fieldset
-        = f.input :email, autofocus: true
-        = f.input :password
-        - if devise_mapping.rememberable?
-          = f.input :remember_me, as: :boolean, label: false, inline_label: t(:remember_me, scope: :simple_form)
-    %div{class: :'modal-footer'}
-      = f.button :submit, class: [:btn, :'btn-danger']
+  %div{class: :'modal-dialog'}
+    %div{class: :'modal-content'}
+      %div{class: :'modal-header'}
+        %h1{class: :logo}
+          %img{src: image_path('yammer.svg')}
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: :'form-horizontal'}, wrapper: :horizontal_form, wrapper_mappings: {check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean}) do |f|
+        %div{class: :'modal-body'}
+          %fieldset
+            = f.input :email, autofocus: true
+            = f.input :password
+            - if devise_mapping.rememberable?
+              = f.input :remember_me, as: :boolean, label: false, inline_label: t(:remember_me, scope: :simple_form)
+        %div{class: :'modal-footer'}
+          = f.button :submit, class: [:btn, :'btn-danger']

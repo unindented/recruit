@@ -1,9 +1,15 @@
 #modal {
+  display: block;
   opacity: .95;
   top: 20%;
 
   .logo {
     padding: 0 .5em;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   form {

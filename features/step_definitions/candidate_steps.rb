@@ -25,13 +25,13 @@ end
 # Then
 
 Then /^I should see an? ([^ ]+) message$/ do |message|
-  page.should have_selector "#messages .alert-#{message}"
+  expect(page).to have_selector "#messages .alert-#{message}"
 end
 
 Then /^I should see an? "([^"]*)" notice under "([^"]*)"$/ do |notice, element|
-  page.should have_selector "form .candidate_#{element.underscore} .help-inline", text: notice
+  expect(page).to have_selector "form .candidate_#{element.underscore} .help-block", text: notice
 end
 
 Then /^I should have (\d+) candidates?/ do |count|
-  Candidate.count.should == count.to_i
+  expect(Candidate.count).to be count.to_i
 end

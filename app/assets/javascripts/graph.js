@@ -8,34 +8,34 @@
 
   function filterRole(role) {
     return {
-      type:    'role'
-    , id:      'r' + role.id
-    , role_id: role.id
+      type:    'role',
+      id:      'r' + role.id,
+      role_id: role.id
     };
   }
 
   function filterCandidate(candidate) {
     return {
-      type:    'candidate'
-    , id:      'c' + candidate.id
-    , role_id: candidate.role_id
+      type:    'candidate',
+      id:      'c' + candidate.id,
+      role_id: candidate.role_id
     };
   }
 
   function buildFakeCandidate(id, role) {
     return {
-      type:    'candidate'
-    , id:      'f' + id
-    , role_id: role
+      type:    'candidate',
+      id:      'f' + id,
+      role_id: role
     };
   }
 
   function buildFakeCandidates(roles) {
-    var candidates = []
-      , i
-      , j
-      , l
-      , m;
+    var candidates = [],
+        i,
+        j,
+        l,
+        m;
 
     Math.seedrandom(roles.length);
 
@@ -101,13 +101,13 @@
   };
 
   Graph.prototype.tick = function () {
-    var w = this.width
-      , h = this.height
-      , r = this.radius;
+    var w = this.width,
+        h = this.height,
+        r = this.radius;
 
     this.node
-      .attr('cx', function (d) { return d.x = Math.max(r, Math.min(w - r, d.x)); })
-      .attr('cy', function (d) { return d.y = Math.max(r, Math.min(h - r, d.y)); });
+      .attr('cx', function (d) { d.x = Math.max(r, Math.min(w - r, d.x)); return d.x; })
+      .attr('cy', function (d) { d.y = Math.max(r, Math.min(h - r, d.y)); return d.y; });
 
     this.link
       .attr('x1', function (d) { return d.source.x; })
@@ -117,9 +117,9 @@
   };
 
   Graph.prototype.addRoles = function (roles) {
-    var links = []
-      , i
-      , l;
+    var links = [],
+        i,
+        l;
 
     // Filter out unwanted properties.
     roles = $.map(roles, filterRole);
